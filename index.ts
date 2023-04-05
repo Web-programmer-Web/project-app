@@ -12,14 +12,14 @@ async function handler(req: Request): Promise<Response> {
   const match = BOOK_ROUTE.exec(req.url);
   // If there is a match, extract the book ID and return a response...
   const id = match
-  console.log(match); 
+  //console.log(match); 
 
 
   if (new URL(req.url).pathname == "/") {
     return await serveFile(req,"FirstUnit.html");
   } else if (match) {
     const id = match.pathname.groups.id;
-    console.log(id); 
+   // console.log(id); 
     return await serveFile(req,id);
   }
 
